@@ -1,0 +1,63 @@
+1. raskidivaem ip, hostname
+nano /etc/hostname
+nano /etc/network/interfaces
+systemctl restart networking
+nano /etc/sysctl.conf --> net.ipv4.ip_forward=1
+sysctl -p
+________________________________________________________________________________
+2. delaem NAT 
+nano /etc/nftables.conf
+
+mojno takje firewall i ssh napisat'
+----------------------------
+nft -f /etc/nftables.conf
+v perviy raz pishem 1)( nft -f /etc/nftables.conf) esli oshibok net 2)
+systemctl enable --now nftables
+
+a v dal'neishem mojno 
+		|
+		V
+systemctl restart nftables 
+_______________________________________________________________________________
+3.dalshe nano /etc/gre.up
+		|
+		V
+RTR-L = ip route add 172.16.106.0/24 via 10.5.5.2 (na drrugom routere 5.5.5.1)
+RTR-R = ip route add 192.168.106.0/24 via 10.5.5.1
+nano /etc/crontab i raskomentiruem stro4ky s pytem do "gre.up" (posledn99)
+_______________________________________________________________________________
+posle etogo delaem ipsec
+
+nano /etc/ipsec.conf
+raskomentirovat' ot "conn vpn" do "esp=..."
+esli ne rabotaet - ipsec restart
+esli rabotaet - systemctl enable --now ipsec
+_______________________________________________________________________________
+4. firewall+ssh
+/etc/nftables.conf
+
+DLYA RTR-L:
+udp dport 53 accept;
+udp dport 500 accept;
+tcp dport 80 accept;
+tdp dport 443 accept;
+tcp dport 22 accept;
+tcp dport 22** accept; #na meste zvezd nyjnoe zna4enie
+ct state {established, related} accept;
+ip protocol icmp accept;
+ip protocol gre accept;
+ip saddr 192.168.106.0/24 accept;
+ip saddr 172.16.106.0/24 accept;
+ip version 4 drop;
+
+DLYA RTR-R vse to je samoe, no bez porta 53
+
+SSH NA RTR-L
+v table ip nat pishem chain prerouting{
+type nat hook prerouting priority 0; policy accept;
+iifname "#iface_v_ISP" tcp dport 22** dnat to 192.168.106.100:22;}
+
+SSH na RTR-R to je samoe, men9ets9 ip na address WEB-R i port po zadaniu
+_______________________________________________________________________________
+5. DNS
+  
