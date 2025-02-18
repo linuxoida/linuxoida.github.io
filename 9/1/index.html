@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренажёр</title>
+    <link rel="stylesheet" href="style.css">
+	
+  </head>
+  <body>
+  
+    <div class="container">
+		<h1>1 задание ОГЭ</h1>
+		
+		<div id = "example"></div>
+		
+		<h2>Ответ:</h2>
+		
+		<div class="form-example">
+			<input type="text" name="name" id="otvetPole" required />
+			<input type="button" onclick = "attempt()" value="Проверить результат" />
+		</div>
+		
+		<div id = "otvet"></div>
+		<h2></h2>
+		<br><input type="button" onclick = "stranica()" value="⇄ Другое задание" />
+		<br><br><a href="../index.html">↪ Назад</a>
+		
+		<div class="footer">
+			<p>© 2025 Двуреченск</p>
+		</div>
+	</div>
+	<script src="words.js"></script>
+	<script src="script.js"></script>
+	
+  </body>
+</html>
