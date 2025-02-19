@@ -18,7 +18,7 @@ function stranica () {
 	}
 	zadanie += '<br>После этого ученик убрал из текста один из городов, а также ставшие лишними запятую и пробел. После этого размер предложения оказался на <strong>'
 	askWord = words[temp][Math.floor(Math.random() * 8)]
-	kolvoBytes = askWord.length * kolvoBit / 8
+	kolvoBytes = askWord.length * kolvoBit / 8 + 2
 	zadanie += kolvoBytes + '</strong>' 
 	if (kolvoBytes%10 == 1 && kolvoBytes%100 != 11) {
 		zadanie += ' байт';
