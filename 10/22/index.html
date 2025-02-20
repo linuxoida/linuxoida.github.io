@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тренажёр</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  
+    <div class="container">
+		<h1>Занятие 22. Тренажёр IP-адресов</h1>
+			<div class="form-example">
+				<label for="name">IP устройства: </label>
+				<input type="text" name="name" id="ip"  disabled />
+				<input type="button" onclick="func1()" value="Генерировать" />
+			</div>
+			<br>
+			<div id = "ipbin" class = "ipbin">В двоичном коде: </div>
+		<br>
+			<div class="form-example">
+				<label for="name">Маска: </label>
+				<input type="text" name="name" id="mask" disabled />
+				<input type="button" onclick="func2()" value="Генерировать" />
+			</div>
+			<br>
+			<div id = "maskbin" class = "maskbin">В двоичном коде: </div>
+          <h2>Ответ</h2>
+			<div class="form-example">
+				<label for="name">Адрес сети: </label>
+				<input type="text" name="name" id="address" required />
+				<input type="button" onclick = "attempt()" value="Проверить" />
+			</div>
+			<br>
+			<div id = "otvet" class = "otvet" ></div>
+			<a href="../index.html">↪ Назад</a>
+		<div class="footer">
+			<p>© 2025 Двуреченск</p>
+		</div>
+	</div>
+	<script src="script.js"></script>
+  </body>
+</html>
