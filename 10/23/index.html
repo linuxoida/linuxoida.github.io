@@ -14,8 +14,7 @@
 	<style>
 		img {
 			width:20em;
-			padding: 10px;
-			padding-top: 20px;
+			border-radius: 10px;
 		}
 		.content {
 			text-indent: 1em;
@@ -25,6 +24,12 @@
 				width:10em;
 			}
 		}
+		.code {
+			border-radius: 10px;
+			padding: 1em;
+			text-indent: 0;
+			font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace; 
+		}
 	</style>
 </head>
 <body>
@@ -33,7 +38,7 @@
         <div id = "header">
             <div id = "headerLeft">
                 <div id = "menuHamburgerBase"><div id = "menuHamburger"></div></div>
-                <div class = "headerName"><a href="../../index.html">Информатика</a></div>
+                <div class = "headerName"><a href="/">Информатика</a></div>
                 <div id = "themeSwitchBase"><div class = "themeSwitch"></div></div>
             </div>
             
@@ -48,19 +53,69 @@
         <div id = "sidebar">
             <h1>Меню</h1>
             <ul>
-                <li class="li_menu"><b><a href="../../7/index.html">7 класс</a></b></li>
+                <li class="li_menu"><b><a href="/7">7 класс</a></b></li>
                 
-                <li class="li_menu"><b><a href="../../8/index.html">8 класс</a></b></li>
+                <li class="li_menu"><b><a href="/8">8 класс</a></b></li>
 				
-                <li class="li_menu"><b><a href="../../9/index.html">9 класс</a></b></li>
-				<li class="li_menu"><b><a href="../../10/index.html"><u>10 класс</u></a></b></li>
-				<li class="li_menu"><b><a href="../../11/index.html">11 класс</a></b></li>
-				<li class="li_menu"><b><a href="../../index.html">↪ Главная</a></b></li>
+                <li class="li_menu"><b><a href="/9">9 класс</a></b></li>
+		<li class="li_menu"><b><a href="/10"><u>10 класс</u></a></b></li>
+		<li class="li_menu"><b><a href="/11">11 класс</a></b></li>
+		<li class="li_menu"><b><a href="/">↪ Главная</a></b></li>
             </ul>
         </div>
         <div id = "container">
             <div class = "content">
-				<h1>23 занятие</h1>
+				<h1>Команды и условия исполнителя Робот</h1>
+				<details>
+					<summary style = "cursor:pointer;"><b>Инструкция</b></summary>
+
+					<p>Как редактировать обстановку:</p>
+					<img src = "photo/edit.png">
+					<p>Шаблон для любой программы с роботом:</p>
+					<div class="code">
+						использовать <font color="#00cf00">Робот</font><br>
+						алг<br>
+						нач<br>
+						&emsp; <strong><i>Здесь пишем команды</i></strong><br>
+						кон
+					</div>
+					<p>Команды робота:</p>
+					<ul>
+						<li>закрасить</li>
+						<li>вправо</li>
+						<li>вверх</li>
+						<li>влево</li>
+						<li>вниз</li>
+					</ul>
+					<p>Шаблон условия:</p>
+					<div class="code">
+						если <b><i>условие</i></b> то<br>
+						&emsp;<b><i>Здесь пишем команды которые будут выполняться если условие сработает</i></b><br>
+						все
+					</div>
+					<p>Пример условия:</p>
+					<div class="code">
+						если <font color="#00aaff">сверху не стена</font> то<br>
+						&emsp;<font color="#00aaff">закрасить</font><br>
+						&emsp;<font color="#00aaff">вправо</font><br>
+						все
+					</div>
+					<p>Шаблон цикла:</p>
+					<div class="code">
+						нц пока <b><i>что-то</i></b> <br>
+						&emsp;<b><i>Здесь пишем команды которые будут выполняться пока выполняется условие</i></b><br>
+						все
+					</div>
+					<p>Пример цикла:</p>
+					<div class="code">
+						нц пока <font color="#00aaff">слева свободно</font><br>
+						&emsp;<font color="#00aaff">закрасить</font><br>
+						&emsp;<font color="#00aaff">влево</font><br>
+						&emsp;<font color="#00aaff">закрасить</font><br>
+						&emsp;<font color="#00aaff">вниз</font><br>
+						кц
+					</div>
+				</details>
 				<div id='exercise'></div>
 			</div>
         </div>
