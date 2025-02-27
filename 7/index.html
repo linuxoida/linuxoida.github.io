@@ -1,97 +1,58 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>База</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    h1 {
-      color: #2c3e50;
-      text-align: center;
-    }
-    h2 {
-      color: #34495e;
-      border-bottom: 2px solid #34495e;
-      padding-bottom: 5px;
-    }
-    .contact-info {
-      margin-top: 20px;
-    }
-    .contact-info p {
-      margin: 5px 0;
-    }
-    .skills, .experience {
-      margin-top: 30px;
-    }
-    .skills ul, .experience ul {
-      list-style-type: square;
-      padding-left: 20px;
-    }
-    .footer {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 0.9em;
-      color: #777;
-    }
-	a {
-	font-family: Arial, sans-serif;
-	  outline: none;
-	  text-decoration: none;
-	  padding: 2px 1px 0;
-	}
-
-	a:link {
-	  color: #0f0f0f;
-	}
-
-	a:visited {
-	  color: #0f0f0f;
-	}
-
-	a:focus {
-	  border-bottom: 1px solid;
-	  background: #aaa;
-	}
-
-	a:hover {
-	  border-bottom: 1px solid;
-	  background: #ccc;
-	}
-
-	a:active {
-	  background: #aaa;
-	  color: #fff;
-	}
-  </style>
-</head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link id ="theme" rel="stylesheet" type="text/css" href = "darkTheme.css";>
+    <title>7 класс</title>
+    <script src = "../jquery-3.6.0.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"></head>
 <body>
-  <div class="container">
-    <h1>7 класс</h1>
-    <div class="contact-info">
-		<ul>
-			<li><p><strong>Скоро всё будет</strong></p></li>
-			<a href="../index.html">↪ Назад</a>
-		</ul>
+    
+    <div id = "main">
+        <div id = "header">
+            <div id = "headerLeft">
+                <div id = "menuHamburgerBase"><div id = "menuHamburger"></div></div>
+                <div class = "headerName"><a href="../index.html">Информатика</a></div>
+                <div id = "themeSwitchBase"><div class = "themeSwitch"></div></div>
+            </div>
+            
+            <div id = "headerRight">
+                
+                <!-- <div class="switch-btn"></div> -->
+                
+                <div class = "login"><div class = "loginSVG"></div><div class = "loginText">Войти</div></div>
+            </div>
+                
+        </div>
+        <div id = "sidebar">
+            <h1>Меню</h1>
+            <ul>
+			<li class="li_menu"><b><a href="../7/index.html" class="disabled"><u>7 класс</u></a></b></li>
+                <li class="li_menu"><b><a href="../8/index.html">8 класс</a></b></li>
+                <li class="li_menu"><b><a href="../9/index.html">9 класс</a></b></li>
+                <li class="li_menu"><b><a href="../10/index.html">10 класс</a></b></li>
+				<li class="li_menu"><b><a href="../11/index.html">11 класс</a></b></li>
+				<li class="li_menu"><b><a href="../index.html">↪ Главная</a></b></li>
+            </ul>
+        </div>
+        <div id = "container">
+            <div class = "content">
+				<h1>7 класс</h1>
+				<p>Здесь пока ничего нет😕</p>
+				<p><strong>Вы можете выбрать раздел в меню</strong></p>
+			</div>
+        </div>
+        
+        <div id = "footer"> 
+            <div id = "underFooter"></div>
+            © 2025 Двуреченск
+        </div>
     </div>
-    <div class="footer">
-		<p>© 2025 Двуреченск</p>
-    </div>
-  </div>
+    <script src = "script.js"></script>
 </body>
 </html>
