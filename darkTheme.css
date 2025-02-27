@@ -27,7 +27,7 @@ body {
     background-color: rgb(44, 44, 44);
 }
 .themeSwitch {
-    background-image: url("img/sun.svg");
+    background-image: url("/img/sun.svg");
     filter: invert(100%);
     --webkit-filter: invert(0%);
 }
