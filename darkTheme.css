@@ -76,3 +76,12 @@ a:active {
 	background: #aaa;
 	color: #fff;
 }
+.code {
+	background-color: rgb(70,70,70);
+	
+}
+details {
+	background-color: rgb(60, 60, 60);
+	border-radius: 10px;
+	padding: 1em;
+}
