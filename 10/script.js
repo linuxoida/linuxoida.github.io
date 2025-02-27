@@ -4,21 +4,21 @@
 		localStorage.theme = "light";
 	}
 	if (localStorage.theme == "light") {
-		document.getElementById("theme").href = "lightTheme.css";
+		document.getElementById("theme").href = "/lightTheme.css";
 		themeSwitch = false;
 	}
 	else if (localStorage.theme == "dark") {
-		document.getElementById("theme").href = "darkTheme.css";
+		document.getElementById("theme").href = "/darkTheme.css";
 		themeSwitch = true;
 	}
     $('.themeSwitch').click(function(){
         if(!themeSwitch) {
-            document.getElementById("theme").href = "darkTheme.css";
+            document.getElementById("theme").href = "/darkTheme.css";
             themeSwitch = true;
 			localStorage.theme = "dark";
         }
         else {
-            document.getElementById("theme").href = "lightTheme.css";
+            document.getElementById("theme").href = "/lightTheme.css";
             themeSwitch = false;
 			localStorage.theme = "light";
         }
