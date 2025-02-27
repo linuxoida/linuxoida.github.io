@@ -22,7 +22,7 @@ body {
     background-color: white;
 }
 .themeSwitch {
-    background: url("img/moon.svg");
+    background: url("/img/moon.svg");
 }
 #themeSwitchBase:hover {
     background-color: rgb(207, 207, 207);
