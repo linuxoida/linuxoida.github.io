@@ -1,15 +1,65 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Тренажёр</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-  
-    <div class="container">
-		<h1>Занятие 22. Тренажёр IP-адресов</h1>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link id ="theme" rel="stylesheet" type="text/css" href = "/darkTheme.css";>
+    <title>10 класс</title>
+    <script src = "/jquery-3.6.0.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<style>
+		img {
+			width:20em;
+			padding: 10px;
+			padding-top: 20px;
+		}
+		.content {
+			text-indent: 1em;
+		}
+		@media only screen and (max-width: 600px), (max-height:600px) {
+			img {
+				width:10em;
+			}
+		}
+	</style>
+</head>
+<body>
+    
+    <div id = "main">
+        <div id = "header">
+            <div id = "headerLeft">
+                <div id = "menuHamburgerBase"><div id = "menuHamburger"></div></div>
+                <div class = "headerName"><a href="../../index.html">Информатика</a></div>
+                <div id = "themeSwitchBase"><div class = "themeSwitch"></div></div>
+            </div>
+            
+            <div id = "headerRight">
+                
+                <div class = "login"><div class = "loginSVG"></div><div class = "loginText">Войти</div></div>
+            </div>
+                
+        </div>
+        <div id = "sidebar">
+            <h1>Меню</h1>
+            <ul>
+                <li class="li_menu"><b><a href="../../7/index.html">7 класс</a></b></li>
+                
+                <li class="li_menu"><b><a href="../../8/index.html">8 класс</a></b></li>
+				
+                <li class="li_menu"><b><a href="../../9/index.html">9 класс</a></b></li>
+				<li class="li_menu"><b><a href="../../10/index.html"><u>10 класс</u></a></b></li>
+				<li class="li_menu"><b><a href="../../11/index.html">11 класс</a></b></li>
+				<li class="li_menu"><b><a href="../../index.html">↪ Главная</a></b></li>
+            </ul>
+        </div>
+        <div id = "container">
+            <div class = "content">
+				<h1>22 занятие</h1>
+				<h1>Занятие 22. Тренажёр IP-адресов</h1>
 			<div class="form-example">
 				<label for="name">IP устройства: </label>
 				<input type="text" name="name" id="ip"  disabled />
@@ -33,11 +83,15 @@
 			</div>
 			<br>
 			<div id = "otvet" class = "otvet" ></div>
-			<a href="../index.html">↪ Назад</a>
-		<div class="footer">
-			<p>© 2025 Двуреченск</p>
-		</div>
-	</div>
-	<script src="script.js"></script>
-  </body>
+			</div>
+        </div>
+        
+        <div id = "footer"> 
+            <div id = "underFooter"></div>
+            © 2025 Двуреченск
+        </div>
+    </div>
+    <script src = "/script.js"></script>
+	<script src="script_exercise.js"></script>
+</body>
 </html>
