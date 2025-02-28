@@ -262,3 +262,51 @@ a.disabled {
 	cursor: default; /*  курсор в виде стрелки */
 	color: #888;/* цвет текста серый */
 }
+.flexCards {
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.a_card {
+	width: calc((100% / 5) - 5px);
+	aspect-ratio: 1/1;
+	transition-duration: 500ms;
+}
+@media (max-width: 1024px) { /* Для планшетов */
+    .a_card {
+		width: calc((100% / 3) - 10px);
+	}
+}
+
+@media (max-width: 600px) { /* Для смартфонов */
+	h1 {
+		font-size: 2em;
+		line-height: 1.3em;
+	}
+    .a_card {
+		/*width: calc((100% / 3) - 10px);*/
+		width: calc((100% / 2) - 10px);;
+	}
+}
+.card {
+	font-size: 1em;
+	/*width: var(--cardsSize);*/
+	width: calc(100%-10px);
+	border-radius: 10px;
+	padding:1em;
+	margin: 10px;
+	aspect-ratio: 1/1;
+	display: flex;
+	align-items: flex-end;
+	text-indent:0;
+}
+.textInCard {
+	margin:0;
+	text-align:center;
+}
+a {
+	outline: none;
+	text-decoration: none;
+	padding: 2px 1px 0;
+	border-radius:10%;
+}
