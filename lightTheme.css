@@ -49,12 +49,10 @@ a:visited {
 }
 
 a:focus {
-	border-bottom: 1px solid;
 	background: #aaa;
 }
 
 a:hover {
-	border-bottom: 1px solid;
 	background: #ccc;
 }
 
@@ -68,8 +66,6 @@ a:active {
 }
 details {
 	background-color: rgb(230, 230, 230);
-	border-radius: 10px;
-	padding: 1em;
 }
 .card {
 	background: linear-gradient(rgb(240,240,240),rgb(220,220,220));
