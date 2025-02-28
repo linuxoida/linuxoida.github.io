@@ -81,6 +81,8 @@ body {
     margin-left: 10px;
     margin-right: 10px;
 	font-size: 1.2em;
+	font-weight: 400;
+	font-style: italic;
 }
 .sidebarMenu {
     top: 90px;
@@ -252,10 +254,10 @@ body {
     transition-duration: 300ms; /* анимация */
 }
 .login {
-    transition-duration: 500ms;
+    transition-duration: 300ms;
 }
 .headerName {
-    transition-duration: 500ms;
+    transition-duration: 300ms;
 }
 .li_menu {
 	padding-bottom: 1em;
