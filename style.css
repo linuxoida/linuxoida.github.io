@@ -308,6 +308,8 @@ a.disabled {
 	text-indent:0;
 }
 .textInCard {
+	font-weight: 400;
+font-style: italic;
 	margin:0;
 	text-align:center;
 }
