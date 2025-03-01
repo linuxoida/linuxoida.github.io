@@ -315,3 +315,18 @@ details {
 	border-radius: 10px;
 	padding: 1em;
 }
+img {
+    width:20em;
+    border-radius: 10px;
+}
+@media only screen and (max-width: 600px), (max-height:600px) {
+    img {
+        width:10em;
+    }
+}
+.code {
+    border-radius: 10px;
+    padding: 1em;
+    text-indent: 0;
+    font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace; 
+}
