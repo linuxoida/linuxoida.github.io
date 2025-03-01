@@ -32,6 +32,7 @@ $( document ).ready(function() {
             $("#sidebar").attr("style","");
             $("#container").attr("style","");
             $("#sidebar").removeClass('sidebarMenu');
+            $("#footer").css("filter","");
 			menuHamburger = true
         }
     });
