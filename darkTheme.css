@@ -25,6 +25,7 @@ body {
 }
 .content {
     background-color: rgb(44, 44, 44);
+    box-shadow: 0 0 20px rgba(50, 50, 50, 0.2);
 }
 .themeSwitch {
     background-image: url("/img/sun.svg");
@@ -57,15 +58,21 @@ a:link {
 a:visited {
 	color: rgb(236, 236, 236);
 }
-
+#header a:focus {
+    background: none;
+}
 a:focus {
 	background: #444;
 }
-
+#header a:hover {
+    background: none;
+}
 a:hover {
 	background: #444;
 }
-
+#header a:active {
+    background: none;
+}
 a:active {
 	background: #aaa;
 	color: #fff;

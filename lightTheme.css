@@ -41,15 +41,21 @@ a:link {
 a:visited {
 	color: #0f0f0f;
 }
-
+#header a:focus {
+    background: none;
+}
 a:focus {
 	background: #aaa;
 }
-
+#header a:hover {
+    background: none;
+}
 a:hover {
 	background: #ccc;
 }
-
+#header a:active {
+    background: none;
+}
 a:active {
 	background: #aaa;
 	color: #fff;
