@@ -4,33 +4,33 @@
 		localStorage.theme = "light";
 	}
 	if (localStorage.theme == "light") {
-		document.getElementById("theme").href = "/lightTheme.css";
+        $("#theme").attr("href","/lightTheme.css");
 		themeSwitch = false;
 	}
 	else if (localStorage.theme == "dark") {
-		document.getElementById("theme").href = "/darkTheme.css";
+        $("#theme").attr("href","/darkTheme.css");
 		themeSwitch = true;
 	}
     $('.themeSwitch').click(function(){
         if(!themeSwitch) {
-            document.getElementById("theme").href = "/darkTheme.css";
+            $("#theme").attr("href","/darkTheme.css");
             themeSwitch = true;
 			localStorage.theme = "dark";
         }
         else {
-            document.getElementById("theme").href = "/lightTheme.css";
+            $("#theme").attr("href","/lightTheme.css");
             themeSwitch = false;
 			localStorage.theme = "light";
         }
     });
 	 $("#footer").html('<div id = "underFooter"></div>© 2025 Лаптев Н.С.');
-     $("head").append('<link rel="icon" href="/img/favicon.ico" type="image/x-icon">')
+     $("head").append('<link rel="icon" href="/img/favicon.ico" type="image/x-icon">');
 $( document ).ready(function() {
 	let menuHamburger = true;
     $(window).resize(function() {
         if(window.screen.availWidth > 1440) {
-            document.getElementById("sidebar").style = "";
-            document.getElementById("container").style = "";
+            $("#sidebar").attr("style","");
+            $("#container").attr("style","");
             $("#sidebar").removeClass('sidebarMenu');
 			menuHamburger = true
         }
@@ -40,23 +40,26 @@ $( document ).ready(function() {
         document.getElementById("sidebar").style.width = "100px";
         if(!menuHamburger) {
             $("#sidebar").removeClass('sidebarMenu');
-            document.getElementById("sidebar").style.display = "none";
-            document.getElementById("container").style.filter = "";
+            $("#sidebar").css("display","none");
+            $("#container").css("filter","");
+            $("#footer").css("filter","");
             menuHamburger = true;
         }
         else {
             $("#sidebar").addClass('sidebarMenu');
-            document.getElementById("sidebar").style.display = "block";
-            document.getElementById("container").style.filter = "blur(10px)";
-			document.getElementById("container").style.userSelect = "none";
+            $("#sidebar").css("display","block");
+            $("#container").css("filter","blur(10px)");
+            $("#footer").css("filter","blur(10px)");
+            $("#container").css("user-select","none");
             menuHamburger = false;
         }
     });
     $('#container').click(function(){
 		if (!menuHamburger) {
 			$("#sidebar").removeClass('sidebarMenu');
-            document.getElementById("sidebar").style.display = "none";
-            document.getElementById("container").style.filter = "";
+            $("#sidebar").css("display","none");
+            $("#container").css("filter","");
+            $("#footer").css("filter","");
             menuHamburger = true;
 		}
 	});
