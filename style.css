@@ -84,7 +84,7 @@ body {
 	font-weight: 400;
 }
 .sidebarMenu {
-    top: 90px;
+    top: 60px;
     position: fixed;
     z-index: 100;
     border-radius: 10px;
@@ -109,7 +109,7 @@ body {
 }
 /* #underFooter {} */
 #container {
-    padding-top:100px;
+    padding-top:74px;
     padding-bottom: 10px;
 }
 .themeSwitch {
@@ -159,14 +159,13 @@ body {
         padding: 10px;
         width: 18%;
         position: fixed;
-        top: 100px;
         border-radius: 10px;
-        top: 100px;
+        top: 74px;
         margin-left: 10px;
         margin-right: 10px;
     }
     .sidebarMenu {
-        top: 90px;
+        top: 74px;
         position: fixed;
         z-index: 100;
         border-radius: 10px;
