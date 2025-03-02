@@ -1,6 +1,6 @@
 let askWord = [];
 
-let exerciseAmountString = '<form><label >Выберите количество заданий: </label><select  id="exerciseAmountNum" >';
+let exerciseAmountString = '<form><label >Кол-во заданий: </label><select  id="exerciseAmountNum" >';
 for (let i = 1; i <= 100; i++) {
 	exerciseAmountString += '<option value="' + i + '">' + i + '</option>';
 }
@@ -55,7 +55,7 @@ function exercise () {
 	//Amount = $("#exerciseAmountNum").attr("value");
 	document.getElementById('exerciseAmount').innerHTML = '';
 	for (let Num = 0; Num < Amount; Num++) {
-		document.getElementById('exercise1').innerHTML += '<div  style = "margin-top: 1em;" id = "example' + Num + '"></div><br><div class="form-example"><input type="text" name="name" id="otvetPole' + Num + '" required /><input type="button" id = "knopka' + Num +'" onclick = "attempt(' + Num + ')" value="Проверить результат" /></div><div id = "otvet' + Num + '"></div><div style="border: 1px solid #aaa; margin-top: 1em;"></div>'
+		document.getElementById('exercise1').innerHTML += '<div  style = "margin-top: 1em;" id = "example' + Num + '"></div><br><div class="form-example"><label for="name" style = "margin-right: 0.3em;">Ответ:  </label><input type="text" name="name" class="otvetPoleClass" id="otvetPole' + Num + '" required /><input type="button" id = "knopka' + Num +'" onclick = "attempt(' + Num + ')" value="✔" /></div><div id = "otvet' + Num + '"></div><div style="border: 1px solid #aaa; margin-top: 1em;"></div>'
 		//$("#exercise1").append('<div id = "example' + Num + '"></div><br><div class="form-example"><input type="text" name="name" id="otvetPole' + Num + '" required /><input type="button" id = "knopka' + Num +'" onclick = "attempt(' + Num + ')" value="Проверить результат" /></div><div id = "otvet' + Num + '"></div><h2></h2>');
 		document.getElementById('otvetPole' + Num ).value = ''
 		//$("#otvetPole").attr("value","");
@@ -117,3 +117,4 @@ function attempt(Num) {
 		document.getElementById('counter').innerHTML += ' <br>Процент правильных ответов: ' + percent + '% ';
 		
 	}
+	

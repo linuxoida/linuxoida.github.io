@@ -330,3 +330,29 @@ img {
     text-indent: 0;
     font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace; 
 }
+input[type=text] {
+    padding-left: 1em;
+    font-size: 0.8em;
+    font-family: 'Fira Sans', sans-serif;
+    border-radius: 5px;
+    height: 1.8em;
+    border: 0px;
+}
+input[type=button] {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 0.8em;
+    border-radius: 5px;
+    margin-left:1em;
+    border: 0px;
+    cursor: pointer;
+    padding: 3px 16px;
+    height: 1.9em;
+}
+select {
+    border-radius: 5px;
+    border: none;
+    margin-left: 1em;
+    height: 2em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+}

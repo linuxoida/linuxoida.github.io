@@ -88,3 +88,10 @@ details {
 	background: linear-gradient(rgb(100,100,100),rgb(80,80,80));
 	box-shadow: 0 0 20px rgba(128, 128, 128, 0.5);
 }
+input[type=text] {
+    color:white;
+    background-color: #555555;
+}
+input[type=button] {
+    background-color: #aeaeae;
+}
