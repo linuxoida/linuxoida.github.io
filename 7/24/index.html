@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link id ="theme" rel="stylesheet" type="text/css" href = "/darkTheme.css";>
+    <title>7 класс</title>
+    <script src = "../../jquery-3.6.0.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<style>
+		img {
+			width:30em;
+			border-radius: 10px;
+			margin: 1em 0 1em 0;
+		}
+		.imgDiv {
+				text-align: center;
+			}
+		.content {
+			text-indent: 1em;
+		}
+		@media only screen and (max-width: 600px), (max-height:600px) {
+			img {
+				width:15em;
+			}
+			.imgDiv {
+				text-align: left;
+			}
+		}
+		.code {
+			border-radius: 10px;
+			padding: 1em;
+			text-indent: 0;
+			font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace; 
+		}
+	</style>
+</head>
+<body>
+    
+    <div id = "main">
+        <div id = "header">
+            <div id = "headerLeft">
+                <div id = "menuHamburgerBase"><div id = "menuHamburger"></div></div>
+                <div class = "headerName"><a href="/">Информатика</a></div>
+                <div id = "themeSwitchBase"><div class = "themeSwitch"></div></div>
+            </div>
+            
+            <div id = "headerRight">
+                
+                <!-- <div class="switch-btn"></div> -->
+                
+                <div class = "login"><div class = "loginSVG"></div><div class = "loginText">Войти</div></div>
+            </div>
+                
+        </div>
+        <div id = "sidebar">
+            <h1>Меню</h1>
+            <ul>
+                <li class="li_menu"><b><a href="/7"><u>7 класс</u></a></b></li>
+                
+                <li class="li_menu"><b><a href="/8">8 класс</a></b></li>
+				
+                <li class="li_menu"><b><a href="/9">9 класс</a></b></li>
+		<li class="li_menu"><b><a href="/10">10 класс</a></b></li>
+		<li class="li_menu"><b><a href="/11">11 класс</a></b></li>
+		<li class="li_menu"><b><a href="/">↪ Главная</a></b></li>
+            </ul>
+        </div>
+        <div id = "container">
+            <div class = "content">
+				<h1>Вставка нетекстовых объектов в текстовые документы</h1>
+				<h2>Упражнение №1</h2>
+				<p>Создадим такое объявление:</p>
+				<div style="text-align: center;"><img src="photo/1.png" alt="Уличное объявление о продаже квартиры"></div>
+				<p>Шаг 1. Для начала стоит подметить что основу объявления составляет таблица. Но в первой строке одна большая ячейка (где надпись «Продам квартиру» и т.д.), а во второй строке целых шесть ячеек с одинаковым содержимым, т.е. количество ячеек в строках разное.
+				<br><br>Поэтому сначала можно создать таблицу 2 строки на 6 столбцов, и объединить верхнюю строку в одну ячейку, как и нужно:
+				</p>
+				<ul>
+					<li>Переходим в панели инструментов на вкладку «Вставка», и нажимаем на инструмент «Таблица»:
+						<div class = "imgDiv"><img src="photo/2.png" alt="Тут должно быть фото"></div>
+					</li>
+					<li>Выделяем таблицу 6х2:
+						<div class = "imgDiv"><img src="photo/3.png" alt="Тут должно быть фото"></div>
+					</li>
+					<li>Получаем такой результат: 
+						<div class = "imgDiv"><img src="photo/4.png" alt="Тут должно быть фото"></div>
+					</li>
+					<li>Выделяем верхние ячейки:
+						<div class = "imgDiv"><img src="photo/5.png" alt="Тут должно быть фото"></div>
+					</li>
+					<li>Нажимаем по выделенным ячейкам правой кнопкой мыши, и нажимаем «Объединить ячейки»:
+						<div class = "imgDiv"><img src="photo/6.png" alt="Тут должно быть фото"></div>
+					</li>
+					<li>Получился такой результат:
+						<div class = "imgDiv"><img src="photo/7.png" alt="Тут должно быть фото"></div>
+					</li>
+				</ul>
+			</div>
+        </div>
+        
+        <div id = "footer"> 
+            <div id = "underFooter"></div>
+            © 2025 Двуреченск
+        </div>
+    </div>
+    <script src = "/script.js"></script>
+</body>
+</html>
