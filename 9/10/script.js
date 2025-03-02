@@ -48,7 +48,7 @@ function exerciseTypeOne(Num) {
 }
 function exerciseTypeTwo(Num) {
 	const outputCorrectAnswer = Math.floor(Math.random() * (200-50) + 50);
-	let outputText ='<strong>' + (Num+1) + '.</strong> Переведите данное число в десятичную систему счисления: <strong>' + outputCorrectAnswer.toString(2) + '</strong><sub>2</sub>.<br>Запишите полученное число в ответ, систему счисления указывать не надо.';
+	let outputText ='<strong>' + (Num+1) + '.</strong> Переведите данное число в десятичную систему счисления: ' + outputCorrectAnswer.toString(2) + '<sub>2</sub>.<br>Запишите полученное число в ответ, систему счисления указывать не надо.';
 	return [outputText,outputCorrectAnswer.toString()];
 }
 let Amount = 0;
@@ -56,7 +56,7 @@ function exercise () {
 	Amount = document.getElementById('exerciseAmountNum').value
 	document.getElementById('exerciseAmount').innerHTML = ''
 	for (let Num = 0; Num < Amount; Num++) {
-		document.getElementById('exercise1').innerHTML += '<div id = "example' + Num + '"></div><br><div class="form-example"><input type="text" name="name" id="otvetPole' + Num + '" required /><input type="button" id = "knopka' + Num +'" onclick = "attempt(' + Num + ')" value="Проверить результат" /></div><div id = "otvet' + Num + '"></div><h2></h2>'
+		document.getElementById('exercise1').innerHTML += '<div style = "margin-top:1em;"id = "example' + Num + '"></div><br><div class="form-example" ><label for="name" style = "margin-right: 0.3em;">Ответ:  </label><input type="text" onkeydown="if (event.keyCode == ' + 13 + '){ attempt(' + Num +');}" name="name" id="otvetPole' + Num + '" required /><input type="button" id = "knopka' + Num +'" onclick = "attempt(' + Num + ')" value="✔" /></div><div id = "otvet' + Num + '"></div><div style="border: 1px solid #aaa; margin-top: 1em;"></div>'
 			
 		document.getElementById('otvetPole' + Num ).value = ''
 		document.getElementById('otvet' + Num ).innerHTML = ''
