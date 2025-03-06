@@ -1,6 +1,6 @@
 let askWord = [];
 
-let exerciseAmountString = '<form><label >Выберите количество заданий: </label><select  id="exerciseAmountNum" >';
+let exerciseAmountString = '<form><label >Кол-во заданий: </label><select  id="exerciseAmountNum" >';
 for (let i = 1; i <= 100; i++) {
 	exerciseAmountString += '<option value="' + i + '">' + i + '</option>';
 }

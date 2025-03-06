@@ -1,6 +1,6 @@
 let askWord = [];
 
-let exerciseAmountString = '<form><label >Выберите количество заданий: </label><select  id="exerciseAmountNum" >';
+let exerciseAmountString = '<form><label >Кол-во заданий: </label><select  id="exerciseAmountNum" >';
 for (let i = 1; i <= 100; i++) {
 	exerciseAmountString += '<option value="' + i + '">' + i + '</option>';
 }
@@ -10,7 +10,7 @@ exerciseAmountString += '</select> <input type="button" onclick = "exercise()" v
 //document.getElementById('exerciseAmount').innerHTML += exerciseAmountString;
 $('#exerciseAmount').append(exerciseAmountString);
 
-function logicalExpression(x,notLeft,signLeft,left,notRight,signRight,right) {
+function logicalExpression(x,notLeft,signLeft,left,notRight,signRight,right, evenOrOdd) {
     let LeftExpression = false;
     let RightExpression = false;
     if (notLeft == "не ") {
@@ -73,8 +73,19 @@ function logicalExpression(x,notLeft,signLeft,left,notRight,signRight,right) {
             RightExpression = x <= right;
             break;
     }
-    
-    return LeftExpression && RightExpression;
+    if (evenOrOdd) {
+        switch (evenOrOdd) {
+            case 'чётное':
+                return LeftExpression && RightExpression && x % 2 == 0;
+                break;
+            case 'нечётное':
+                return LeftExpression && RightExpression && x % 2 == 1;
+                break;
+        }
+    }
+    else {
+        return LeftExpression && RightExpression;
+    }
 }
 
 
@@ -96,12 +107,14 @@ function exerciseTypeOne(Num) {
     outputText += " натуральное число x, для которого истинно это выражение:<br>";
     const signs = ['>','<','>=','<='];
     const randNot = ['','не '];
+    const randEvenOdd = [false,'чётное','нечётное'];
     let temp = false;
     let outputCorrectAnswer = '';
     let notLeft;
     let notRight;
     let signLeft;
     let signRight;
+    let evenOrOdd;
     //этот цикл - костыль, он генерирует до тех пор пока не будет решаемое выражение
     //нужно сделать так чтобы не выходило подобное: (x <= 15) и (x > 18); (x < 18) и не (x <= 33); (x <= 20) и (x >= 27)
     while (!temp) {
@@ -109,16 +122,17 @@ function exerciseTypeOne(Num) {
         notRight = randNot[Math.floor(Math.random()*2)];
         signLeft = signs[Math.floor(Math.random()*4)];
         signRight = signs[Math.floor(Math.random()*4)];
+        evenOrOdd = randEvenOdd[Math.floor(Math.random() * 3)];
         if (MinOrMax) {
             for (let i = 0; i <= 100; i++) {
-                if (logicalExpression(i,notLeft,signLeft,left,notRight,signRight,right)) {
+                if (logicalExpression(i,notLeft,signLeft,left,notRight,signRight,right,evenOrOdd)) {
                     outputCorrectAnswer = i;
                 }
             }
         }
         else {
             for (let i = 100; i >= 0; i--) {
-                if (logicalExpression(i,notLeft,signLeft,left,notRight,signRight,right)) {
+                if (logicalExpression(i,notLeft,signLeft,left,notRight,signRight,right,evenOrOdd)) {
                     outputCorrectAnswer = i;
                 }
             }
@@ -127,7 +141,14 @@ function exerciseTypeOne(Num) {
             temp = true;
         }
     }
-    outputText += "<div style = 'margin-top:0.5em;text-align:center;'>" + notLeft + "(x " + signLeft + " " + left + ") и " + notRight + '(x ' + signRight + " " + right + ")" + "</div>";
+    outputText += "<div style = 'margin-top:0.5em;text-align:center;'>" + notLeft + "(x " + signLeft + " " + left + ") и " + notRight + '(x ' + signRight + " " + right + ")";
+    if (evenOrOdd == 'чётное') {
+        outputText += " и (x чётное)";
+    }
+    else if (evenOrOdd == 'нечётное') {
+        outputText += " и (x нечётное)";
+    }
+    outputText += "</div>";
     //outputText += "<br>" + outputCorrectAnswer;
     
 	return [outputText,outputCorrectAnswer.toString()];
