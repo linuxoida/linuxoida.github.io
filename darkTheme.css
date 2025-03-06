@@ -91,6 +91,7 @@ details {
 input[type=text] {
     color:white;
     background-color: #555555;
+    border: 0px;
 }
 input[type=button] {
     background-color: #aeaeae;

@@ -336,7 +336,7 @@ input[type=text] {
     font-family: 'Fira Sans', sans-serif;
     border-radius: 5px;
     height: 1.8em;
-    border: 0px;
+    
 }
 input[type=button] {
     font-family: 'Fira Sans', sans-serif;

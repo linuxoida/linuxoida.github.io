@@ -73,6 +73,7 @@ details {
 }
 input[type=text] {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border: 1px dashed rgb(210 210 210);
 }
 input[type=button] {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
