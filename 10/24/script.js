@@ -61,7 +61,7 @@ function exerciseTypeOne(Num, evenCheck = false) {
         outputText += "наибольшее";
         MinOrMax = true;
     }
-    outputText += " натуральное число, для которого подходит это выражение:<br>";
+    outputText += " натуральное число, для которого подходит это уравнение:<br>";
     const signs = ['>','<','≥','≤'];
     const randNot = ['',''];
     const randEvenOdd = ['чётное','нечётное'];
@@ -166,7 +166,7 @@ function exerciseTypeTwo(Num) {
     return [outputText,outputCorrectAnswer.toString()];
 }
 
-let Amount = 5;
+let Amount = 3;
 
 function exercise () {
     document.getElementById('start').style.display = "none";
@@ -270,8 +270,6 @@ function startTimer() {
 
         if (timeLeft <= 0) {
             clearInterval(timerId);
-            
-            
             document.getElementById("timeLeft").innerText = " вышло";
             let correctCounter = 0;
             let incorrectCounter = 0;
