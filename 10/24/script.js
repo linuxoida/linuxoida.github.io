@@ -166,7 +166,7 @@ function exerciseTypeTwo(Num) {
     return [outputText,outputCorrectAnswer.toString()];
 }
 
-let Amount = 3;
+let Amount = 4;
 
 function exercise () {
     document.getElementById('start').style.display = "none";
