@@ -10,147 +10,15 @@ exerciseAmountString += '</select> <input type="button" onclick = "exercise()" v
 //document.getElementById('exerciseAmount').innerHTML += exerciseAmountString;
 $('#exerciseAmount').append(exerciseAmountString);
 
-function logicalExpression(x,notLeft,signLeft,left,notRight,signRight,right, evenOrOdd) {
-    let LeftExpression = false;
-    let RightExpression = false;
-    if (notLeft == "не ") {
-        switch (signLeft) {
-            case ">":
-                signLeft = "<=";
-                break;
-            case "<":
-                signLeft = ">=";
-                break;
-            case ">=":
-                signLeft = "<";
-                break;
-            case "<=":
-                signLeft = ">";
-                break;
-        }
-    }
-    if (notRight == "не ") {
-        switch (signRight) {
-            case ">":
-                signRight = "<=";
-                break;
-            case "<":
-                signRight = ">=";
-                break;
-            case ">=":
-                signRight = "<";
-                break;
-            case "<=":
-                signRight = ">";
-                break;
-        }
-    }
-    switch (signLeft) {
-        case ">":
-            LeftExpression = x > left;
-            break;
-        case "<":
-            LeftExpression = x < left;
-            break;
-        case ">=":
-            LeftExpression = x >= left;
-            break;
-        case "<=":
-            LeftExpression = x <= left;
-            break;
-    }
-    switch (signRight) {
-        case ">":
-            RightExpression = x > right;
-            break;
-        case "<":
-            RightExpression = x < right;
-            break;
-        case ">=":
-            RightExpression = x >= right;
-            break;
-        case "<=":
-            RightExpression = x <= right;
-            break;
-    }
-    if (evenOrOdd) {
-        switch (evenOrOdd) {
-            case 'чётное':
-                return LeftExpression && RightExpression && x % 2 == 0;
-                break;
-            case 'нечётное':
-                return LeftExpression && RightExpression && x % 2 == 1;
-                break;
-        }
-    }
-    else {
-        return LeftExpression && RightExpression;
-    }
-}
+
 
 
 
 
 function exerciseTypeOne(Num) {
-    right = Math.floor(Math.random() * (100 - 10) + 10);
-    left = Math.floor(Math.random()*((right-2) - 3) + 3);
-    let outputText = "<strong>" + (Num+1) + ".</strong> " +"Укажите в ответе ";
-    let MinOrMax = '';
-    if(Math.floor(Math.random()*2)) {
-        outputText += "наименьшее";
-        MinOrMax = false;
-    }
-    else {
-        outputText += "наибольшее";
-        MinOrMax = true;
-    }
-    outputText += " натуральное число x, для которого истинно это выражение:<br>";
-    const signs = ['>','<','>=','<='];
-    const randNot = ['','не '];
-    const randEvenOdd = [false,'чётное','нечётное'];
-    let temp = false;
-    let outputCorrectAnswer = '';
-    let notLeft;
-    let notRight;
-    let signLeft;
-    let signRight;
-    let evenOrOdd;
-    //этот цикл - костыль, он генерирует до тех пор пока не будет решаемое выражение
-    //нужно сделать так чтобы не выходило подобное: (x <= 15) и (x > 18); (x < 18) и не (x <= 33); (x <= 20) и (x >= 27)
-    while (!temp) {
-        notLeft = randNot[Math.floor(Math.random()*2)];
-        notRight = randNot[Math.floor(Math.random()*2)];
-        signLeft = signs[Math.floor(Math.random()*4)];
-        signRight = signs[Math.floor(Math.random()*4)];
-        evenOrOdd = randEvenOdd[Math.floor(Math.random() * 3)];
-        if (MinOrMax) {
-            for (let i = 0; i <= 100; i++) {
-                if (logicalExpression(i,notLeft,signLeft,left,notRight,signRight,right,evenOrOdd)) {
-                    outputCorrectAnswer = i;
-                }
-            }
-        }
-        else {
-            for (let i = 100; i >= 0; i--) {
-                if (logicalExpression(i,notLeft,signLeft,left,notRight,signRight,right,evenOrOdd)) {
-                    outputCorrectAnswer = i;
-                }
-            }
-        }
-        if (outputCorrectAnswer >= 3 && outputCorrectAnswer <= 97) {
-            temp = true;
-        }
-    }
-    outputText += "<div style = 'margin-top:0.5em;text-align:center;'>" + notLeft + "(x " + signLeft + " " + left + ") и " + notRight + '(x ' + signRight + " " + right + ")";
-    if (evenOrOdd == 'чётное') {
-        outputText += " и (x чётное)";
-    }
-    else if (evenOrOdd == 'нечётное') {
-        outputText += " и (x нечётное)";
-    }
-    outputText += "</div>";
-    outputText += "<br>" + outputCorrectAnswer;
-    
+    let output = "В языке запросов поискового сервера для обозначения логической операции «ИЛИ»  используется  символ  «|»,  а  для  обозначения  логической  операции «И» – символ «&». <br>В  таблице  приведены  запросы  и  количество  найденных  по  ним  страниц некоторого сегмента сети Интернет. ";
+    let outputText = output;
+    let outputCorrectAnswer = 1;
 	return [outputText,outputCorrectAnswer.toString()];
 }
 
