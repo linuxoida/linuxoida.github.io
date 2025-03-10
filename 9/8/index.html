@@ -9,10 +9,15 @@
     <title>9 класс</title>
     <script src = "/jquery-3.6.0.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"></head>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<style>
+		.content {
+			line-height: 1.5em;
+		}
+	</style>
+</head>
 <body>
-    
     <div id = "main">
         <div id = "header">
             <div id = "headerLeft">
@@ -20,45 +25,36 @@
                 <div class = "headerName"><a href="/">Информатика</a></div>
                 <div id = "themeSwitchBase"><div class = "themeSwitch"></div></div>
             </div>
-            
             <div id = "headerRight">
-                
-                <!-- <div class="switch-btn"></div> -->
-                
                 <div class = "login"><div class = "loginSVG"></div><div class = "loginText">Войти</div></div>
             </div>
-                
         </div>
         <div id = "sidebar">
             <h1>Меню</h1>
             <ul>
                 <li class="li_menu"><b><a href="/7">7 класс</a></b></li>
                 <li class="li_menu"><b><a href="/8">8 класс</a></b></li>
-		<li class="li_menu"><b><a href="/9" class="disabled"><u>9 класс</u></a></b></li>
+                <li class="li_menu"><b><a href="/9"><u>9 класс</u></a></b></li>
                 <li class="li_menu"><b><a href="/10">10 класс</a></b></li>
-		<li class="li_menu"><b><a href="/11">11 класс</a></b></li>
-		<li class="li_menu"><b><a href="/">↪ Главная</a></b></li>
+                <li class="li_menu"><b><a href="/11">11 класс</a></b></li>
+                <li class="li_menu"><b><a href="/">↪ Главная</a></b></li>
             </ul>
         </div>
         <div id = "container">
             <div class = "content">
-				<h1>9 класс</h1>
-				<ul>
-					<li><strong><a href="1/">Задание №1 ОГЭ</a></strong></li><br>
-                    <li><strong><a href="3/">Задание №3 ОГЭ</a></strong></li><br>
-                    <li><strong><a href="8/">Задание №8 ОГЭ</a></strong></li><br>
-					<li><strong><a href="10/">Задание №10 ОГЭ</a></strong></li><br>
-                    
-                    <li><strong><a href="9M/">Пример сайта с песней</a></strong></li>
-				</ul>
+				<h1>8 задание ОГЭ</h1>
+				<h2>Работает, но это ещё не готовый вид</h2>
+				<div id = 'exerciseAmount'></div>
+				<div id="exercise1"></div>
+				<div id = "counter" style = "margin-top: 1em;"></div>
 			</div>
         </div>
-        
         <div id = "footer"> 
             <div id = "underFooter"></div>
             © 2025 Двуреченск
         </div>
     </div>
     <script src = "/script.js"></script>
+	<script src = "script.js"></script>
 </body>
 </html>

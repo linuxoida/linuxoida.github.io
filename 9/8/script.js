@@ -149,7 +149,7 @@ function exerciseTypeOne(Num) {
         outputText += " и (x нечётное)";
     }
     outputText += "</div>";
-    //outputText += "<br>" + outputCorrectAnswer;
+    outputText += "<br>" + outputCorrectAnswer;
     
 	return [outputText,outputCorrectAnswer.toString()];
 }
