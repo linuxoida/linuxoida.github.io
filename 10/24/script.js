@@ -50,7 +50,7 @@ function logicalExpression(x,signLeft,left,signRight,right,evenOrOdd) {
 
 function exerciseTypeOne(Num, evenCheck = false) {
     right = Math.floor(Math.random() * (100 - 10) + 10);
-    left = Math.floor(Math.random()*(right-2));
+    left = Math.floor(Math.random()*((right-2) - 3) + 3);
     let outputText = "<strong>" + (Num+1) + ".</strong> " +"Укажите в ответе ";
     let MinOrMax = '';
     if(Math.floor(Math.random()*2)) {
@@ -106,7 +106,7 @@ function exerciseTypeOne(Num, evenCheck = false) {
                 }
             }
         }
-        if (outputCorrectAnswer >= 1 && outputCorrectAnswer <= 99) {
+        if (outputCorrectAnswer >= 3 && outputCorrectAnswer <= 97) {
             temp = true;
         }
     }
@@ -141,7 +141,7 @@ function logicalExpressionTwo(notA,A,firstSign,notB,B) {
     }
 }
 function exerciseTypeTwo(Num) {
-    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    const alphabet = 'ABCDEFGHIJKLMNPQRSTUVWXYZ'.split('');
     let letter1 = alphabet[Math.floor(Math.random() * alphabet.length)];
     let letter2;
     do {

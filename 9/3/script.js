@@ -93,7 +93,7 @@ function logicalExpression(x,notLeft,signLeft,left,notRight,signRight,right, eve
 
 function exerciseTypeOne(Num) {
     right = Math.floor(Math.random() * (100 - 10) + 10);
-    left = Math.floor(Math.random()*(right-2));
+    left = Math.floor(Math.random()*((right-2) - 3) + 3);
     let outputText = "<strong>" + (Num+1) + ".</strong> " +"Укажите в ответе ";
     let MinOrMax = '';
     if(Math.floor(Math.random()*2)) {
@@ -137,7 +137,7 @@ function exerciseTypeOne(Num) {
                 }
             }
         }
-        if (outputCorrectAnswer >= 1 && outputCorrectAnswer <= 99) {
+        if (outputCorrectAnswer >= 3 && outputCorrectAnswer <= 97) {
             temp = true;
         }
     }
@@ -149,7 +149,7 @@ function exerciseTypeOne(Num) {
         outputText += " и (x нечётное)";
     }
     outputText += "</div>";
-    //outputText += "<br>" + outputCorrectAnswer;
+    outputText += "<br>" + outputCorrectAnswer;
     
 	return [outputText,outputCorrectAnswer.toString()];
 }
