@@ -16,9 +16,66 @@ $('#exerciseAmount').append(exerciseAmountString);
 
 
 function exerciseTypeOne(Num) {
-    let output = "В языке запросов поискового сервера для обозначения логической операции «ИЛИ»  используется  символ  «|»,  а  для  обозначения  логической  операции «И» – символ «&». <br>В  таблице  приведены  запросы  и  количество  найденных  по  ним  страниц некоторого сегмента сети Интернет. ";
-    let outputText = output;
-    let outputCorrectAnswer = 1;
+    function toHundreds(temp) {
+		return temp - temp % 100;
+	}
+	const words = "Buick, Cadillac, Chevrolet, Chrysler, Dodge, Ford, GMC, Hummer, Jeep, Lincoln, Pontiac, Tesla, Aston Martin, Bentley, Caterham, Jaguar, Land Rover, Lotus, McLaren, Mini, Rolls-Royce, Rover, Belgee, Cupra, Seat, Abarth, Alfa Romeo, Ferrari, Fiat, Lancia, Lamborghini, Maserati, Audi, BMW, Brabus, Mercedes-Benz, Opel, Porsche, Volkswagen, Wiesmann, ГАЗ, ЗИЛ, КАМАЗ, Москвич, УАЗ, Aurus, Нива, Жигули, Ока, Волга, Чайка, Гранта, Веста, Приора, Калина, Ларгус, Evolute, Sollers, Lada, Dacia, Ravon, Skoda, Polestar, Saab, Volvo, Daewoo, Genesis, Hyundai, KIA, SsangYong, Bugatti, Citroen, Renault, Peugeot, Daihatsu, Datsun, Honda, Infiniti, Lexus, Mazda, Mitsubishi, Nissan, Scion, Subaru, Suzuki, Toyota";
+	const wordsArray = words.split(", ");
+	let firstWord = wordsArray[Math.floor(Math.random()*(wordsArray.length))];
+	let secondWord;
+	do {
+		secondWord = wordsArray[Math.floor(Math.random()*(wordsArray.length))];
+	} while (firstWord == secondWord);
+	const minRange = 5000;
+	const maxRange = 10000;
+	let A = toHundreds(Math.floor(Math.random() * (maxRange - minRange) + minRange));
+	let B;
+	do {
+		B = toHundreds(Math.floor(Math.random() * (maxRange - minRange) + minRange));
+	} while (B == A);
+	let A_and_B = toHundreds(Math.floor(Math.random() * (2000 - 200) + 200));
+	let A_or_B = A + B - A_and_B;
+	let output = "<strong>" + (Num+1) + ".</strong>" +" В языке запросов поискового сервера для обозначения логической операции «ИЛИ»  используется  символ  «|»,  а  для  обозначения  логической  операции «И» – символ «&». <br>В  таблице  приведены  запросы  и  количество  найденных  по  ним  страниц некоторого сегмента сети Интернет. ";
+	output += "<div class='table_component' role='region' tabindex='0'><table><thead><tr><th>Запрос</th><th>Кол-во найденных<br>страниц (в тыс.)</th></thead>";
+	let outputCorrectAnswer = 0;
+	switch(Math.floor(Math.random() * 4)) {
+		case 0:
+			output += "<tbody><tr><td>" + firstWord + " | " + secondWord + "</td><td>" + A_or_B + "</td></tr>"; 
+			output += "<tbody><tr><td>" + firstWord + " & " + secondWord + "</td><td>" + A_and_B + "</td></tr>"; 
+			output += "<tbody><tr><td>" + firstWord + "</td><td>" + A + "</td></tr></tbody></table></div>";
+			output +=  "<br>Какое количество страниц (в тысячах) будет найдено по запросу <strong>" + secondWord + "</strong>?";
+			outputCorrectAnswer = B;
+			break;
+		case 1:
+			output += "<tbody><tr><td>" + secondWord + "</td><td>" + B + "</td></tr>";
+			output += "<tbody><tr><td>" + firstWord + " | " + secondWord + "</td><td>" + A_or_B + "</td></tr>";
+			output += "<tbody><tr><td>" + firstWord + " & " + secondWord + "</td><td>" + A_and_B + "</td></tr></tbody></table></div>"; 
+			output +=  "<br>Какое количество страниц (в тысячах) будет найдено по запросу <strong>" + firstWord + "</strong>?";
+			outputCorrectAnswer = A;
+			break;
+		case 2:
+			output += "<tbody><tr><td>" + firstWord + "</td><td>" + A + "</td></tr>"; 
+			output += "<tbody><tr><td>" + secondWord + "</td><td>" + B + "</td></tr>";
+			output += "<tbody><tr><td>" + firstWord + " | " + secondWord + "</td><td>" + A_or_B + "</td></tr></tbody></table></div>"; 
+			output +=  "<br>Какое количество страниц (в тысячах) будет найдено по запросу <strong>" + firstWord + " & " + secondWord + "</strong>?";
+			outputCorrectAnswer = A_and_B;
+			break;
+		case 3:
+			output += "<tbody><tr><td>" + firstWord + "</td><td>" + A + "</td></tr>"; 
+			output += "<tbody><tr><td>" + secondWord + "</td><td>" + B + "</td></tr>";
+			output += "<tbody><tr><td>" + firstWord + " & " + secondWord + "</td><td>" + A_and_B + "</td></tr></tbody></table></div>"; 
+			output +=  "<br>Какое количество страниц (в тысячах) будет найдено по запросу <strong>" + firstWord + " | " + secondWord + "</strong>?";
+			outputCorrectAnswer = A_or_B;
+			break;	
+	}
+	output += "<br>Считается, что все запросы выполнялись практически одновременно, так что набор  страниц,  содержащих  все  искомые  слова,  не  изменялся  за  время выполнения запросов.";
+	//output += "<tbody><tr><td>" + "A | Б" + "</td><td>" + A_or_B + "</td></tr>"; 
+	//output += "<tbody><tr><td>" + "A & Б" + "</td><td>" + A_and_B + "</td></tr>"; 
+	//output += "<tbody><tr><td>" + "A" + "</td><td>" + A + "</td></tr>"; 
+	//output += "<tbody><tr><td>" + "Б" + "</td><td>" + B + "</td></tr>";
+	//output += "</tbody></table>"; 
+	//output += "a = " + A + " b = " + B + " a&b = " + A_and_B + " a|b = " + A_or_B;
+	let outputText = output;
 	return [outputText,outputCorrectAnswer.toString()];
 }
 
