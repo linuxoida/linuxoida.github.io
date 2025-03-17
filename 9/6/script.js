@@ -96,13 +96,15 @@ function exerciseTypeOne(Num) {
     let outputText = `<b>${Num+1}.</b> Ниже приведена программа, записанная на двух языках программирования.`;
     const signs = ['>','<','>=','<='];
     const randNot = ['','не '];
-    const randOrAnd = ['или','и']
+    const randOrAnd = ['или','и'];
+    const YesOrNoArr = ['YES','NO'];
     let outputCorrectAnswer = 0;
     let notLeft = randNot[Math.floor(Math.random()*2)];
     let notRight = randNot[Math.floor(Math.random()*2)];
     let signLeft = signs[Math.floor(Math.random()*4)];
     let signRight = signs[Math.floor(Math.random()*4)];
     let AndOr = randOrAnd[Math.floor(Math.random()*2)];
+    let YesOrNo = YesOrNoArr[Math.floor(Math.random()*2)];
     outputText += "<div class='table_component' role='region' tabindex='0'><table><thead><tr><th>Алгоритмический язык</th><th>Python</th></tr></thead><tbody><tr style = 'font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace; '><td><b>алг</b><br><b>нач</b><br><b>цел</b> a, b<br><b>ввод</b> a<br><b>ввод</b> b<br><b>если</b> " + notLeft + "(a " + signLeft + " " + left + ") " + AndOr + " " + notRight + '(b ' + signRight + " " + right + ")<br><b>&nbsp&nbsp&nbsp&nbspто вывод</b> 'YES'<br><b>&nbsp&nbsp&nbsp&nbspиначе вывод</b> 'NO'<br><b>все</b><br><b>кон</b></td><td>a = int(input())<br>b = int(input())<br><b>if</b> " + ((notLeft === "не ") ? "not " : "") + "(a " + signLeft + " " + left + ") " + ((AndOr === "и") ? "and" : "or") + " " + ((notRight === "не ") ? "not " : "") + '(b ' + signRight + " " + right + "):<br><b>&nbsp&nbsp&nbsp&nbspprint</b>('YES')<br><b>else:</b><br><b>&nbsp&nbsp&nbsp&nbspprint</b>('NO')</td></tr></tbody></table></div>";
     //outputText += "<br>" + outputCorrectAnswer;
     let questionArray = [];
@@ -111,14 +113,17 @@ function exerciseTypeOne(Num) {
         let temp = [Math.floor(Math.random() * (20 - (-10)) + (-10)),Math.floor(Math.random() * (20 - (-10)) + (-10))];
         questionArray.push(temp);
         questionString += `(${temp[0]}, ${temp[1]});&nbsp`;
-        if (logicalExpression(temp[0],temp[1],notLeft,signLeft,left,AndOr,notRight,signRight,right)) {
+        if (YesOrNo === 'YES' && logicalExpression(temp[0],temp[1],notLeft,signLeft,left,AndOr,notRight,signRight,right)) {
+            outputCorrectAnswer++;
+        }
+        else if (YesOrNo === 'NO' && !logicalExpression(temp[0],temp[1],notLeft,signLeft,left,AndOr,notRight,signRight,right)) {
             outputCorrectAnswer++;
         }
     }
     questionString += "</span>";
     outputText += `<br>Было проведено 9 запусков программы, при которых в качестве значений переменных a и b вводились следующие пары чисел:<div style = "text-align:center; margin: 1em 0 1em 0;">${questionString}</div>`;
-    outputText += `Сколько было запусков, при которых программа напечатала «YES»?`;
-    //`<div>${outputCorrectAnswer}</div>`;
+    outputText += `Сколько было запусков, при которых программа напечатала «${YesOrNo}»?`;
+    //outputText += `<div>${outputCorrectAnswer}</div>`;
 	return [outputText,outputCorrectAnswer.toString()];
 }
 
