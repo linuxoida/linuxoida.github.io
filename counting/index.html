@@ -122,7 +122,15 @@
         </div>
         <script>
             function addNum (Num) {
-                document.querySelector("#textPole").value += Num;
+                if (Num === '-') {
+                    if (!document.querySelector("#textPole").value.includes('-')) {
+                        document.querySelector("#textPole").value += '-';
+                    }
+                }
+                else {
+                    document.querySelector("#textPole").value += Num;
+                }
+
             }
             function deleteNum () {
                 let temp = document.querySelector("#textPole").value;
