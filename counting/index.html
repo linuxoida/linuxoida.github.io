@@ -123,7 +123,7 @@
         <script>
             function addNum (Num) {
                 if (Num === '-') {
-                    if (!document.querySelector("#textPole").value.includes('-')) {
+                    if (document.querySelector("#textPole").value.trim().length == 0) {
                         document.querySelector("#textPole").value += '-';
                     }
                 }
