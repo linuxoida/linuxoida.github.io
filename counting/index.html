@@ -143,8 +143,17 @@
             function generateQuestion () {
                 let a = Math.floor(Math.random() * (20 - 1) + 1);
                 let b = Math.floor(Math.random() * (20 - 1) + 1);
-                document.querySelector("#question").innerHTML = `${a} + ${b}`;
-                answer = parseInt(a) + parseInt(b);
+                let minusOrPlus = Math.floor(Math.random() * 2);
+                if (minusOrPlus == 0) {
+                    answer = parseInt(a) + parseInt(b);
+                    document.querySelector("#question").innerHTML = `${a} + ${b}`;
+                }
+                else {
+                    answer = parseInt(a) - parseInt(b);
+                    document.querySelector("#question").innerHTML = `${a} - ${b}`;
+                }
+                
+                
                 timer();
             }
             function attempt () {
