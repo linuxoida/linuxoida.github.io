@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/style.css">
-    <link id ="theme" rel="stylesheet" type="text/css" href = "/darkTheme.css";>
+    <link id="theme" rel="stylesheet" type="text/css" href="/darkTheme.css" ;>
     <title>Устный счёт</title>
-    <script src = "/jquery-3.6.0.js"></script>
+    <script src="/jquery-3.6.0.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-	<style>
-		.content {
-			line-height: 1.5em;
-		}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        .content {
+            line-height: 1.5em;
+        }
+
         .table_component {
             overflow: auto;
         }
@@ -38,19 +42,21 @@
             border: 1px solid;
             padding: 5px;
         }
+
         #numpad {
-            display:flex;
+            display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             margin: auto;
             width: 300px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border-radius: 10px;
         }
+
         .key {
             text-align: center;
             width: 100px;
-            height: 100px; 
+            height: 100px;
             font-size: 1.5em;
             border-radius: 10px;
             user-select: none;
@@ -59,30 +65,40 @@
             justify-content: center;
             transition-duration: 500ms;
         }
+
         .key:hover {
-            box-shadow: 0 0 10px rgba(0,0,0,0.4);
-            
-            cursor:pointer;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+            cursor: pointer;
         }
+
         #textPole {
             font-size: 1.5em;
             width: 270px;
         }
-	</style>
+    </style>
 </head>
+
 <body>
-    <div id = "main">
-        <div id = "header">
-            <div id = "headerLeft">
-                <div id = "menuHamburgerBase"><div id = "menuHamburger"></div></div>
-                <div class = "headerName"><a href="/">Информатика</a></div>
-                <div id = "themeSwitchBase"><div class = "themeSwitch"></div></div>
+    <div id="main">
+        <div id="header">
+            <div id="headerLeft">
+                <div id="menuHamburgerBase">
+                    <div id="menuHamburger"></div>
+                </div>
+                <div class="headerName"><a href="/">Информатика</a></div>
+                <div id="themeSwitchBase">
+                    <div class="themeSwitch"></div>
+                </div>
             </div>
-            <div id = "headerRight">
-                <div class = "login"><div class = "loginSVG"></div><div class = "loginText">Войти</div></div>
+            <div id="headerRight">
+                <div class="login">
+                    <div class="loginSVG"></div>
+                    <div class="loginText">Войти</div>
+                </div>
             </div>
         </div>
-        <div id = "sidebar">
+        <div id="sidebar">
             <h1>Меню</h1>
             <ul>
                 <li class="li_menu"><b><a href="/7">7 класс</a></b></li>
@@ -93,35 +109,36 @@
                 <li class="li_menu"><b><a href="/">↪ Главная</a></b></li>
             </ul>
         </div>
-        <div id = "container">
-            <div class = "content">
-				<!--<h1 style = "text-align: center;">Устный счёт</h1>-->
-                <div style = "text-align: center; font-size: 2em; margin: 1em;" id = "question">5+11?</div>
-                <div id = "otvetPole" style="text-align: center; margin: 1em;">
-                    <input type = "text" id = "textPole">
+        <div id="container">
+            <div class="content">
+                <!--<h1 style = "text-align: center;">Устный счёт</h1>-->
+                <div style="text-align: center; font-size: 2em; margin: 1em;" id="question">5+11?</div>
+                <div id="otvetPole" style="text-align: center; margin: 1em;">
+                    <input type="text" id="textPole">
                 </div>
-                
-                <div id = "numpad">
-                    <div class = "key" id = "seven" onclick = "addNum(7)">7</div>
-                    <div class = "key" id = "eight" onclick = "addNum(8)">8</div>
-                    <div class = "key" id = "nine" onclick = "addNum(9)">9</div>
-                    <div class = "key" id = "four" onclick = "addNum(4)">4</div>
-                    <div class = "key" id = "five" onclick = "addNum(5)">5</div>
-                    <div class = "key" id = "six" onclick = "addNum(6)">6</div>
-                    <div class = "key" id = "one" onclick = "addNum(1)">1</div>
-                    <div class = "key" id = "two" onclick = "addNum(2)">2</div>
-                    <div class = "key" id = "three" onclick = "addNum(3)">3</div>
-                    <div class = "key" id = "zero" onclick = "addNum(0)">0</div>
-                    <div class = "key" id = "del" onclick = "deleteNum()">⌫</div>
-                    <div class = "key" id = "del" onclick = "attempt()">✓</div>
-                    <div class = "key" id = "min" onclick = "addNum('-')">-</div>
+
+                <div id="numpad">
+                    <div class="key" id="seven" onclick="addNum(7)">7</div>
+                    <div class="key" id="eight" onclick="addNum(8)">8</div>
+                    <div class="key" id="nine" onclick="addNum(9)">9</div>
+                    <div class="key" id="four" onclick="addNum(4)">4</div>
+                    <div class="key" id="five" onclick="addNum(5)">5</div>
+                    <div class="key" id="six" onclick="addNum(6)">6</div>
+                    <div class="key" id="one" onclick="addNum(1)">1</div>
+                    <div class="key" id="two" onclick="addNum(2)">2</div>
+                    <div class="key" id="three" onclick="addNum(3)">3</div>
+                    <div class="key" id="zero" onclick="addNum(0)">0</div>
+                    <div class="key" id="del" onclick="deleteNum()">⌫</div>
+                    <div class="key" id="del" onclick="attempt()">✓</div>
+                    <div class="key" id="min" onclick="addNum('-')">-</div>
                 </div>
                 <!--<div id = "time" style = "text-align: center; font-size: 1.5em; margin: 1em;">Время: 0 с.</div>-->
-                <div id = "score" style = "text-align: center; font-size: 1.5em; margin: 1em;line-height: 1.5em;">Счёт: 0<br>Среднее время: 0 с.</div>
-			</div>
+                <div id="score" style="text-align: center; font-size: 1.5em; margin: 1em;line-height: 1.5em;">Счёт:
+                    0<br>Среднее время: 0 с.</div>
+            </div>
         </div>
         <script>
-            function addNum (Num) {
+            function addNum(Num) {
                 if (Num === '-') {
                     if (document.querySelector("#textPole").value.trim().length == 0) {
                         document.querySelector("#textPole").value += '-';
@@ -132,7 +149,7 @@
                 }
 
             }
-            function deleteNum () {
+            function deleteNum() {
                 let temp = document.querySelector("#textPole").value;
                 temp = temp.slice(0, -1);
                 document.querySelector("#textPole").value = temp;
@@ -142,14 +159,14 @@
             //let time = 0;
             let timeSumm = 0;
             let timerID;
-            function timer () {
+            function timer() {
                 timerID = setInterval(function () {
                     timeSumm += 0.1;
                     //time += 0.1;
                     //document.querySelector("#time").innerHTML = `Время: ${time.toFixed(1)} с.`
                 }, 100);
             }
-            function generateQuestion () {
+            function generateQuestion() {
                 let a = Math.floor(Math.random() * (20 - 1) + 1);
                 let b = Math.floor(Math.random() * (20 - 1) + 1);
                 let minusOrPlus = Math.floor(Math.random() * 2);
@@ -161,11 +178,11 @@
                     answer = parseInt(a) - parseInt(b);
                     document.querySelector("#question").innerHTML = `${a} - ${b}`;
                 }
-                
-                
+
+
                 timer();
             }
-            function attempt () {
+            function attempt() {
                 otvet = document.querySelector("#textPole").value;
                 if (otvet.trim() == answer) {
                     document.querySelector("#textPole").value = "";
@@ -173,16 +190,17 @@
                     score++;
                     clearInterval(timerID);
                     //time = 0;
-                    document.querySelector("#score").innerHTML = `Счёт: ${score}<br>Среднее время: ${(timeSumm/score).toFixed(1)} с.`;
+                    document.querySelector("#score").innerHTML = `Счёт: ${score}<br>Среднее время: ${(timeSumm / score).toFixed(1)} с.`;
                 }
             }
             generateQuestion();
         </script>
-        <div id = "footer"> 
-            <div id = "underFooter"></div>
+        <div id="footer">
+            <div id="underFooter"></div>
             © 2025 Двуреченск
         </div>
     </div>
-    <script src = "/script.js"></script>
+    <script src="/script.js"></script>
 </body>
+
 </html>
