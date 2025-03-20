@@ -96,3 +96,6 @@ input[type=text] {
 input[type=button] {
     background-color: #aeaeae;
 }
+#numpad {
+    background-color: rgb(82 82 82);
+}
