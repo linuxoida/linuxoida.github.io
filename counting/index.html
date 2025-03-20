@@ -167,19 +167,44 @@
                 }, 100);
             }
             function generateQuestion() {
-                let a = Math.floor(Math.random() * (20 - 1) + 1);
-                let b = Math.floor(Math.random() * (20 - 1) + 1);
-                let minusOrPlus = Math.floor(Math.random() * 2);
-                if (minusOrPlus == 0) {
-                    answer = parseInt(a) + parseInt(b);
-                    document.querySelector("#question").innerHTML = `${a} + ${b}`;
+                const signsArray = [`+`, `-`, `⋅`, `/`, `²`];
+                const sign = signsArray[Math.floor(Math.random() * 5)];
+                let a, b = 0;
+                switch (sign) {
+                    case `+`:
+                        a = Math.floor(Math.random() * (20 - 2) + 2);
+                        b = Math.floor(Math.random() * (20 - 2) + 2);
+                        answer = parseInt(a) + parseInt(b);
+                        document.querySelector("#question").innerHTML = `${a} + ${b}`;
+                        break;
+                    case `-`:
+                        a = Math.floor(Math.random() * (20 - 2) + 2);
+                        b = Math.floor(Math.random() * (20 - 2) + 2);
+                        answer = parseInt(a) - parseInt(b);
+                        document.querySelector("#question").innerHTML = `${a} - ${b}`;
+                        break;
+                    case `⋅`:
+                        a = Math.floor(Math.random() * (16 - 2) + 2);
+                        b = Math.floor(Math.random() * (12 - 2) + 2);
+                        answer = parseInt(a) * parseInt(b);
+                        document.querySelector("#question").innerHTML = `${a} ⋅ ${b}`;
+                        break;
+                    case `/`:
+                        let result = 0;
+                        do {
+                            a = Math.floor(Math.random() * (50 - 10) + 10);
+                            b = Math.floor(Math.random() * (12 - 2) + 2);
+                            result = a / b;
+                        } while ((result - Math.floor(result)) > 0 || result == 1);
+                        answer = result;
+                        document.querySelector("#question").innerHTML = `${a} / ${b}`;
+                        break;
+                    case `²`:
+                        a = Math.floor(Math.random() * (12 - 4) + 4)
+                        answer = a * a;
+                        document.querySelector("#question").innerHTML = `${a}²`;
+                        break;
                 }
-                else {
-                    answer = parseInt(a) - parseInt(b);
-                    document.querySelector("#question").innerHTML = `${a} - ${b}`;
-                }
-
-
                 timer();
             }
             function attempt() {
