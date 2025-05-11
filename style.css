@@ -356,3 +356,30 @@ select {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 
 }
+.tableManage {
+    overflow: auto;
+}
+
+.tableManage table {
+    border: 1px solid;
+    height: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 1px;
+    text-align: center;
+    margin: auto;
+    margin-top: 1em;
+    
+}
+
+.tableManage th {
+    border: 1px solid;
+    padding: 5px;
+    min-width: 40px;
+}
+
+.tableManage td {
+    border: 1px solid;
+    padding: 5px;
+    min-width: 40px;
+}
