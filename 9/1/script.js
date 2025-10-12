@@ -55,7 +55,7 @@ function exerciseTypeTwo(Num) {
             ]
         const bits = [8, 16, 32];
         const kolvoBit = bits[Math.floor(Math.random() * 3)];
-        let outputText = `<strong>' + (Num+1) + '.</strong> В одной из кодировок каждый символ кодируется ${kolvoBit} битами. Определите размер в байтах следующего предложения в данной кодировке, не учитывая кавычки:<br><div style='text-align:center'>`;
+        let outputText = `<strong>${Num+1}.</strong> В одной из кодировок каждый символ кодируется ${kolvoBit} битами. Определите размер в байтах следующего предложения в данной кодировке, не учитывая кавычки:<br><div style='text-align:center'>`;
         const Sentence = sentences[Math.floor(Math.random() * sentences.length)];
         outputText += '"' + Sentence + '"</div>';
         const outputCorrectAnswer = (Sentence.length * kolvoBit / 8).toString();
@@ -92,7 +92,7 @@ function exerciseTypeThree(Num) {
         let outputCorrectAnswer = randWords[randCorrectWordLength];
         let numbersOfRandWords = ['2','3','4','5','6','7','8','9','10']
         numbersOfRandWords.sort(() => Math.random() - 0.5);
-        let outputText = `<strong>' + (Num+1) + '.</strong> В одной из кодировок каждый символ кодируется ${kolvoBit} битами.<br>Студент составил текст из случайных слов: <br><br>
+        let outputText = `<strong>${Num+1}.</strong> В одной из кодировок каждый символ кодируется ${kolvoBit} битами.<br>Студент составил текст из случайных слов: <br><br>
             "${randWords[numbersOfRandWords[0]]}, 
             ${randWords[numbersOfRandWords[1]]}, 
             ${randWords[numbersOfRandWords[2]]}, 
@@ -189,3 +189,4 @@ function attempt(Num) {
 	}
 
 	
+
