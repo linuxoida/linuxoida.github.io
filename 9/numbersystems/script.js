@@ -13,7 +13,7 @@ function exerciseTypeOne(Num) {
     const outputCorrectAnswer = Math.floor(Math.random() * (200 - 50) + 50);
     const numberSystemsArray = [2, 16];
     const numberSystem = numberSystemsArray[Math.floor(Math.random() * numberSystemsArray.length)];
-    let outputText = `<strong>${Num}.</strong>. Переведите данное число в десятичную систему счисления: ${outputCorrectAnswer.toString(numberSystem).toUpperCase()}<sub>${numberSystem}</sub>.<br>Запишите полученное число в ответ, систему счисления указывать не надо.`;
+    let outputText = `<strong>${Num+1}.</strong>. Переведите данное число в десятичную систему счисления: ${outputCorrectAnswer.toString(numberSystem).toUpperCase()}<sub>${numberSystem}</sub>.<br>Запишите полученное число в ответ, систему счисления указывать не надо.`;
     return [outputText, outputCorrectAnswer.toString()];
 }
 function exerciseTypeTwo(Num) {
@@ -21,7 +21,7 @@ function exerciseTypeTwo(Num) {
     const numberSystemsArray = [10];
     //const numberSystemsArray = [8, 10, 16];
     const numberSystem = numberSystemsArray[Math.floor(Math.random() * numberSystemsArray.length)];
-    let outputText = `<strong>${Num}.</strong>. Есть десятичное число ${outputCorrectAnswer.toString(numberSystem).toUpperCase()}<sub>${numberSystem}</sub>.<br>Переведите его в шестнадцатеричный формат, систему счисления указывать не надо.`;
+    let outputText = `<strong>${Num+1}.</strong>. Есть десятичное число ${outputCorrectAnswer.toString(numberSystem).toUpperCase()}<sub>${numberSystem}</sub>.<br>Переведите его в шестнадцатеричный формат, систему счисления указывать не надо.`;
     return [outputText, outputCorrectAnswer.toString(16)];
 }
 function exerciseTypeThree(Num) {
@@ -29,7 +29,7 @@ function exerciseTypeThree(Num) {
     const numberSystemsArray = [10];
     //const numberSystemsArray = [8, 10, 16];
     const numberSystem = numberSystemsArray[Math.floor(Math.random() * numberSystemsArray.length)];
-    let outputText = `<strong>${Num}.</strong>. Переведите данное число в двоичную систему счисления: ${outputCorrectAnswer.toString(numberSystem).toUpperCase()}<sub>${numberSystem}</sub>.<br>Запишите полученное число в ответ, систему счисления указывать не надо.`;
+    let outputText = `<strong>${Num+1}.</strong>. Переведите данное число в двоичную систему счисления: ${outputCorrectAnswer.toString(numberSystem).toUpperCase()}<sub>${numberSystem}</sub>.<br>Запишите полученное число в ответ, систему счисления указывать не надо.`;
     return [outputText, outputCorrectAnswer.toString(2)];
 }
 let Amount = 0;
