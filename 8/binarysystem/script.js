@@ -30,7 +30,7 @@ function exerciseTypeThree(Num) {
     const numberSystemsArray = [2];
 
     const numberSystem = numberSystemsArray[Math.floor(Math.random() * numberSystemsArray.length)];
-    let outputText = '<strong>${Num+1}.</strong>. ';
+    let outputText = `<strong>${Num+1}.</strong>. `;
     let outputCorrectAnswer = '';
     let a, b = 0;
     switch (sign) {
