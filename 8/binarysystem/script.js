@@ -13,7 +13,7 @@ function exerciseTypeOne(Num) {
     const outputCorrectAnswer = Math.floor(Math.random() * (200 - 50) + 50);
     const numberSystemsArray = [2];
     const numberSystem = numberSystemsArray[Math.floor(Math.random() * numberSystemsArray.length)];
-    let outputText = `<strong>${Num+1}.</strong>. Переведите данное число в десятичную систему счисления: ${outputCorrectAnswer.toString(numberSystem).toUpperCase()}<sub>${numberSystem}</sub>.<br>Запишите полученное число в ответ, систему счисления указывать не надо.`;
+    let outputText = `<strong>${Num+1}.</strong> Переведите данное число в десятичную систему счисления: ${outputCorrectAnswer.toString(numberSystem).toUpperCase()}<sub>${numberSystem}</sub>.<br>Запишите полученное число в ответ, систему счисления указывать не надо.`;
     return [outputText, outputCorrectAnswer.toString()];
 }
 function exerciseTypeTwo(Num) {
@@ -21,7 +21,7 @@ function exerciseTypeTwo(Num) {
     const numberSystemsArray = [10];
     //const numberSystemsArray = [8, 10, 16];
     const numberSystem = numberSystemsArray[Math.floor(Math.random() * numberSystemsArray.length)];
-    let outputText = `<strong>${Num+1}.</strong>. Переведите данное число в двоичную систему счисления: ${outputCorrectAnswer.toString(numberSystem).toUpperCase()}<sub>${numberSystem}</sub>.<br>Запишите полученное число в ответ, систему счисления указывать не надо.`;
+    let outputText = `<strong>${Num+1}.</strong> Переведите данное число в двоичную систему счисления: ${outputCorrectAnswer.toString(numberSystem).toUpperCase()}<sub>${numberSystem}</sub>.<br>Запишите полученное число в ответ, систему счисления указывать не надо.`;
     return [outputText, outputCorrectAnswer.toString(2)];
 }
 function exerciseTypeThree(Num) {
@@ -63,7 +63,7 @@ function exerciseTypeThree(Num) {
             outputText += `Вычислите значение выражения ${a.toString(numberSystem).toUpperCase()}<sub>${numberSystem}</sub> ÷ ${b.toString(numberSystem).toUpperCase()}<sub>${numberSystem}</sub>. Ответ запишите в десятичной системе счисления.`;
             break;
     }
-    return [outputText, outputCorrectAnswer];
+    return [outputText, outputCorrectAnswer.toString()];
 }
 let Amount = 0;
 function exercise () {
