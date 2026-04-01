@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link id ="theme" rel="stylesheet" type="text/css" href = "/darkTheme.css";>
+    <title>9 класс</title>
+    <script src = "/jquery-3.6.0.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<style>
+		.content {
+			line-height: 1.5em;
+		}
+	</style>
+</head>
+<body>
+    <div id = "main">
+        <div id = "header">
+            <div id = "headerLeft">
+                <div id = "menuHamburgerBase"><div id = "menuHamburger"></div></div>
+                <div class = "headerName"><a href="/">Информатика</a></div>
+                <div id = "themeSwitchBase"><div class = "themeSwitch"></div></div>
+            </div>
+            <div id = "headerRight">
+                <div class = "login"><div class = "loginSVG"></div><div class = "loginText">Войти</div></div>
+            </div>
+        </div>
+        <div id = "sidebar">
+            <h1>Меню</h1>
+            <ul>
+                <li class="li_menu"><b><a href="/7">7 класс</a></b></li>
+                <li class="li_menu"><b><a href="/8">8 класс</a></b></li>
+                <li class="li_menu"><b><a href="/9"><u>9 класс</u></a></b></li>
+                <li class="li_menu"><b><a href="/10">10 класс</a></b></li>
+                <li class="li_menu"><b><a href="/11">11 класс</a></b></li>
+                <li class="li_menu"><b><a href="/">↪ Главная</a></b></li>
+            </ul>
+        </div>
+        <div id = "container">
+            <div class = "content">
+				<h1><a href="/9">←</a> 2 задание ОГЭ</h1>
+				<div id = 'exerciseAmount'></div>
+				<div id="exercise1"></div>
+				<div id = "counter" style = "margin-top: 1em;"></div>
+			</div>
+        </div>
+        <div id = "footer"> 
+            <div id = "underFooter"></div>
+            © 2026 Двуреченск
+        </div>
+    </div>
+    <script src = "/script.js"></script>
+	<script>
+    let askWord = [];
+
+let exerciseAmountString = '<form><label >Кол-во заданий: </label><select  id="exerciseAmountNum" >';
+for (let i = 1; i <= 100; i++) {
+	exerciseAmountString += '<option value="' + i + '">' + i + '</option>';
+}
+exerciseAmountString += '</select> <input type="button" onclick = "exercise()" value="✔" /></form>';
+
+
+//document.getElementById('exerciseAmount').innerHTML += exerciseAmountString;
+$('#exerciseAmount').append(exerciseAmountString);
+
+function exerciseTypeOne(Num) {
+    function findAllSolutions(encodedMessage, lookForReversed = false){
+        let letters = {'А': '01', 'Б': '100', 'К': '101', 'Л': '111', 'О': '00', 'С': '110'}
+        encodedMessage = encodedMessage.split('')
+
+        if(lookForReversed){
+            encodedMessage = encodedMessage.reverse()
+        }
+
+        let buffer = ''
+        let _alternativeSolution = ''
+        for (let digit of encodedMessage){
+            buffer += digit
+            let _index = Object.values(letters).indexOf(buffer)
+            if (_index > -1) {
+                buffer = ''
+                _alternativeSolution += Object.keys(letters)[_index]
+            }
+        }
+        if(buffer.length <= 3){
+            let _index = Object.values(letters).indexOf(buffer)
+            if (_index > -1) {
+                buffer = ''
+                _alternativeSolution += Object.keys(letters)[_index]
+                return _alternativeSolution
+            } else if (buffer === '') {
+                return _alternativeSolution
+            }
+        }
+        return undefined
+    }
+    let decodedMessage = ''
+    let encodedMessage = ''
+
+    const letters = {'А': '01', 'Б': '100', 'К': '101', 'Л': '111', 'О': '00', 'С': '110'}
+    for (let i = 0; i < 6; i++) {
+      let _letter = Object.keys(letters)[Math.floor(Math.random() * 6)]
+      decodedMessage += _letter
+      encodedMessage += letters[_letter]
+    }
+
+    let lookForReversed = true;
+    alternativeSolution = findAllSolutions(encodedMessage, lookForReversed);
+    let correctAnswer = [decodedMessage];
+    if(alternativeSolution) correctAnswer.push(alternativeSolution)
+    let outputCorrectAnswer = correctAnswer[0];
+    outputText = `<p><strong>${Num + 1}.</strong> От разведчика было получено следующее сообщение:</p>
+        <div style='text-align: center; letter-spacing: 2px;'>${encodedMessage}</div>
+        <p>В этом сообщении зашифрован пароль – последовательность русских букв.
+          В пароле использовались только буквы А, Б, К, Л, О, С 
+          <br>Каждая буква кодировалась двоичным словом по следующей таблице:</p>
+        <div class="tableManage"><table>
+          <thead>
+            <tr class="orange-table-header">
+              <th>А</th>
+              <th>Б</th>
+              <th>К</th>
+              <th>Л</th>
+              <th>О</th>
+              <th>С</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01</td>
+              <td>100</td>
+              <td>101</td>
+              <td>111</td>
+              <td>00</td>
+              <td>110</td>
+            </tr>
+          </tbody>
+        </table></div>
+        <p>Расшифруйте сообщение. Запишите в ответе пароль.</p>`;
+    return [outputText, outputCorrectAnswer.toString()];
+}
+
+let Amount = 0;
+function exercise () {
+	Amount = document.getElementById('exerciseAmountNum').value
+	document.getElementById('exerciseAmount').innerHTML = ''
+	for (let Num = 0; Num < Amount; Num++) {
+		document.getElementById('exercise1').innerHTML += '<div style = "margin-top:1em;"id = "example' + Num + '"></div><br><div class="form-example" ><label for="name" style = "margin-right: 0.3em;">Ответ:  </label><input type="text" onkeydown="if (event.keyCode == ' + 13 + '){ attempt(' + Num +');}" name="name" id="otvetPole' + Num + '" required /><input type="button" id = "knopka' + Num +'" onclick = "attempt(' + Num + ')" value="✔" /></div><div id = "otvet' + Num + '"></div><div style="border: 1px solid #aaa; margin-top: 1em;"></div>'
+			
+		document.getElementById('otvetPole' + Num ).value = ''
+		document.getElementById('otvet' + Num ).innerHTML = ''
+		//randomExercise = Math.floor(Math.random() * 3);
+		let output = '';
+		//if (randomExercise == 0 || randomExercise == 1 || randomExercise == 2)  {
+			output = exerciseTypeOne(Num)
+		//}
+		//else if (randomExercise == 3) {
+		//	output = exerciseTypeTwo(Num)
+			
+		//}
+		askWord[Num] = output[1]
+		document.getElementById('example' + Num ).innerHTML += output[0]
+		
+	}
+	
+}
+let correct = [];
+let incorrect = [];
+for (let i = 0; i < 100; i++ ) {
+	correct[i] = 0;
+	incorrect[i] = 0;
+}
+function attempt(Num) {
+		
+		otvet = document.getElementById('otvetPole' + Num).value.toString();
+		if (correct[Num] != 1) {
+			if (otvet.trim().toLowerCase() == askWord[Num].trim().toLowerCase() ) {
+				
+				document.getElementById('otvet' + Num).innerHTML = '<br>✔ Правильно!<br>'
+				document.getElementById('otvet' + Num).style.color = 'green'
+				correct[Num] = 1
+				document.getElementById('otvetPole' + Num).disabled  = true;
+				document.getElementById('knopka' + Num).style.display  = 'none';
+			}
+			else if (otvet.trim() == '') {
+				document.getElementById('otvet' + Num).innerHTML = ''
+			}
+			else {
+				document.getElementById('otvet' + Num).innerHTML = '<br>✖ Неверно<br>'
+				document.getElementById('otvet' + Num).style.color = 'red'
+				incorrect[Num] += 1
+				
+			}
+		}
+		let correctCounter = 0;
+		let incorrectCounter = 0;
+		for (let i = 0; i < correct.length; i++ ) {
+				correctCounter += correct[i]
+		}
+		for (let i = 0; i < incorrect.length; i++ ) {
+				incorrectCounter += incorrect[i]
+		}
+		document.getElementById('counter').innerHTML = 'Правильных ответов: ' + correctCounter + ', неправильных: ' + incorrectCounter;
+		percent = ((correctCounter/Amount)*100).toFixed(2);
+		document.getElementById('counter').innerHTML += ' <br>Процент правильных ответов: ' + percent + '% ';
+		
+	}
+  </script>
+</body>
+</html>
