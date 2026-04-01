@@ -23,7 +23,7 @@
 			localStorage.theme = "light";
         }
     });
-	 $("#footer").html('<div id = "underFooter"></div>© 2025 Лаптев Н.С.');
+	 $("#footer").html('<div id = "underFooter"></div>© 2025-2026 Лаптев Н.С.');
      $("head").append('<link rel="icon" href="/img/favicon.ico" type="image/x-icon">');
 $( document ).ready(function() {
 	let menuHamburger = true;
