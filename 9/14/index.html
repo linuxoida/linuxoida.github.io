@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link id ="theme" rel="stylesheet" type="text/css" href = "/darkTheme.css";>
+    <title>7 класс</title>
+    <script src = "../../jquery-3.6.0.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<style>
+    .tableManage {
+        overflow: auto;
+    }
+    
+    .tableManage table {
+        border: 1px solid;
+        height: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        border-spacing: 1px;
+        text-align: center;
+        margin: auto;
+        margin-top: 1em;
+        
+    }
+    
+    .tableManage th {
+        border: 1px solid;
+        padding: 5px;
+        min-width: 40px;
+    }
+    
+    .tableManage td {
+        border: 1px solid;
+        padding: 5px;
+        min-width: 40px;
+    }
+		.content-elem {
+        display: flex;
+        padding: 20px;
+        margin-top: 20px;
+        width: calc(100% - 40px);
+        border-radius: 30px;
+    }
+    .content-elem-svg, .content-elem-svg img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        margin-bottom: 0px;
+    }
+    .content-elem:hover {
+        transition-duration: 400ms;
+    }
+    .temp-img {
+        width:100%;
+        margin: 20px 0px 20px 0px;
+        border: 2px solid rgba(200, 200, 200, 0.7);
+    }
+    p {
+        hyphens: auto;
+    }
+	</style>
+</head>
+<body>
+    
+    <div id = "main">
+        <div id = "header">
+            <div id = "headerLeft">
+                <div id = "menuHamburgerBase"><div id = "menuHamburger"></div></div>
+                <div class = "headerName"><a href="/">Информатика</a></div>
+                <div id = "themeSwitchBase"><div class = "themeSwitch"></div></div>
+            </div>
+            
+            <div id = "headerRight">
+                
+                <!-- <div class="switch-btn"></div> -->
+                
+                <div class = "login"><div class = "loginSVG"></div><div class = "loginText">Войти</div></div>
+            </div>
+                
+        </div>
+        <div id = "sidebar">
+            <h1>Меню</h1>
+            <ul>
+                <li class="li_menu"><b><a href="/7"><u>7 класс</u></a></b></li>
+                
+                <li class="li_menu"><b><a href="/8">8 класс</a></b></li>
+				
+                <li class="li_menu"><b><a href="/9">9 класс</a></b></li>
+		<li class="li_menu"><b><a href="/10">10 класс</a></b></li>
+		<li class="li_menu"><b><a href="/11">11 класс</a></b></li>
+		<li class="li_menu"><b><a href="/">↪ Главная</a></b></li>
+            </ul>
+        </div>
+        <div id = "container">
+            <div class = "content">
+				      <p><strong>В электронную таблицу занесли данные о калорийности продуктов. Ниже приведены первые пять строк таблицы.</strong></p>
+    <h1>Сведения о калорийности продуктов</h1>
+    <div class="tableManage">
+        <table style="margin:auto; font-size: 0.8em;">
+            <tr>
+                <th>Продукт</th>
+                <th>Жиры, г</th>
+                <th>Белки, г</th>
+                <th>Углеводы, г</th>
+                <th>Калорийность, Ккал</th>
+            </tr>
+            <tr>
+                <th>Арахис</th>
+                <td>45,2</td>
+                <td>26,3</td>
+                <td>9,9</td>
+                <td>552</td>
+            </tr>
+            <tr>
+                <th>Арахис жар.</th>
+                <td>52</td>
+                <td>26</td>
+                <td>13,4</td>
+                <td>626</td>
+            </tr>
+            <tr>
+                <th>Горох отв.</th>
+                <td>0,8</td>
+                <td>10,5</td>
+                <td>20,4</td>
+                <td>130</td>
+            </tr>
+            <tr>
+                <th>Горошек зел.</th>
+                <td>0,2</td>
+                <td>5</td>
+                <td>8,3</td>
+                <td>55</td>
+            </tr>
+        </table>
+    </div>
+    <p>В столбце A записан продукт; в столбце B – содержание в нём жиров; в столбце C – содержание белков; в столбце D – содержание углеводов; в столбце E – калорийность этого продукта. Всего в электронную таблицу были занесены данные по 1000 продуктов.</p>
+    <p><strong>Выполните задание.</strong></p>
+    <p>Откройте файл с данной электронной таблицей (расположение файла Вам сообщат организаторы экзамена). На основании данных, содержащихся в этой таблице, выполните задания.
+    <ol>
+    <li>У какого количества продуктов с содержанием не менее 50 г жиров калорийность превышает 500 Ккал? Ответ на этот вопрос запишите в ячейку H2 таблицы.</li>
+    <li>Какова средняя калорийность продуктов с содержанием менее 10 г углеводов и менее 30 г белков? Ответ на этот вопрос запишите в ячейку H3 таблицы с точностью не менее двух знаков после запятой.</li>
+    <li>Постройте круговую диаграмму, отображающую соотношение количества продуктов с содержанием белков менее 10 г, от 10 до 20 г включительно и более 20 г. Левый верхний угол диаграммы разместите вблизи ячейки G6. В поле диаграммы должны присутствовать легенда (обозначение, какой сектор диаграммы соответствует каким данным) и числовые значения данных, по которым построена диаграмма.</li>
+    </ol>
+    <a href="14.ods" class="content-elem"
+        download="file.ods">
+        <div class="content-elem-svg"><img src="/img/icons/(232).png" alt=""></div>
+        <div class="content-elem-url"><u>Скачать файл</u></div>
+    </a>
+			      </div>
+        </div>
+        
+        <div id = "footer"> 
+            <div id = "underFooter"></div>
+            © 2025 Двуреченск
+        </div>
+    </div>
+    <script src = "/script.js"></script>
+</body>
+</html>
